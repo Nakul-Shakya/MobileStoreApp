@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Product</title>
+    <!-- <link rel="stylesheet" href="/stylesheets/style.css"> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-zinc-900 text-white">
+
+<div class="max-w-sm mx-auto p-6">
+    <div class="mb-6">
+        <a href="/read" class="text-blue-500 hover:underline">Back to Products</a>
+    </div>
+
+    <h1 class="text-2xl font-bold mb-4">Edit Product</h1>
+
+   <form action="/update/<%= product._id %>" 
+      method="post" 
+      enctype="multipart/form-data" 
+      class="space-y-5">
+
+
+        <!-- Product Name -->
+        <div>
+            <label for="name" class="block mb-2 text-sm font-medium text-gray-300">Product Name</label>
+            <input type="text" id="name" name="name" value="<%= product.name %>"
+                placeholder="Enter product name"
+                class="shadow-xs bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
+                       focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5
+                       dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white
+                       dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+        </div>
+
+        <!-- Description -->
+        <div>
+            <label for="description" class="block mb-2 text-sm font-medium text-gray-300">Description</label>
+            <textarea id="description" name="description"
+                placeholder="Enter product description"
+                class="shadow-xs bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
+                       focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5
+                       dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white
+                       dark:focus:ring-blue-500 dark:focus:border-blue-500" rows="3" required><%= product.description %></textarea>
+        </div>
+
+        <!-- Price -->
+        <div>
+            <label for="price" class="block mb-2 text-sm font-medium text-gray-300">Price</label>
+            <input type="number" id="price" name="price" step="0.01" value="<%= product.price %>"
+                placeholder="Enter price"
+                class="shadow-xs bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
+                       focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5
+                       dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white
+                       dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+        </div>
+
+
+        <!-- Brand -->
+        <div>
+        <label for="brand" class="block mb-2 text-sm font-medium text-gray-300">Brand</label>
+        <select id="brand" name="brand"
+            class="shadow-xs bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
+                focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5
+                dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white
+                dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+            <option value="">Select a brand</option>
+            <option <%= product.brand === "Samsung" ? "selected" : "" %>>Samsung</option>
+            <option <%= product.brand === "Apple" ? "selected" : "" %>>Apple</option>
+            <option <%= product.brand === "Vivo" ? "selected" : "" %>>Vivo</option>
+            <option <%= product.brand === "Oppo" ? "selected" : "" %>>Oppo</option>
+            <option <%= product.brand === "Realme" ? "selected" : "" %>>Realme</option>
+            <option <%= product.brand === "Xiaomi" ? "selected" : "" %>>Xiaomi</option>
+            <option <%= product.brand === "OnePlus" ? "selected" : "" %>>OnePlus</option>
+            <option <%= product.brand === "Nothing" ? "selected" : "" %>>Nothing</option>
+            <option <%= product.brand === "Google Pixel" ? "selected" : "" %>>Google Pixel</option>
+            <option <%= product.brand === "Motorola" ? "selected" : "" %>>Motorola</option>
+
+        </select>
+        </div>
+
+
+
+        <!-- Current Image Preview -->
+        <div class="mb-4">
+        <p class="mb-2 text-sm text-gray-300">Current Image:</p>
+        <img 
+            src="/images/<%= product.image %>" 
+            alt="Product Image" 
+            class="w-full h-48 object-contain bg-black rounded-lg border border-gray-500"
+        > 
+        </div>
+
+
+        <!-- New Image Preview -->
+        <img id="newImagePreview" 
+            class="hidden w-full h-48 object-contain bg-black rounded-lg border border-gray-500 mt-4" 
+            alt="New Image Preview">
+
+
+
+        <!-- Upload New Image -->
+        <div class="flex items-center justify-center w-full">
+            <label for="imageFile" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-gray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
+                <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                    <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 
+                            5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5
+                            a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
+                    </svg>
+                    <p class="mb-2 text-sm text-gray-500 dark:text-gray-400">
+                        <span class="font-semibold">Click to upload</span> or drag and drop
+                    </p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">
+                        PNG, JPG, GIF (MAX. 2MB)
+                    </p>
+                </div>
+                <input id="imageFile" type="file" name="imageFile" class="hidden" accept="image/*">
+            </label>
+        </div>
+
+
+        <!-- Submit Button -->
+        <button type="submit"
+            class="w-full text-white bg-yellow-500 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-yellow-300
+                   font-medium rounded-lg text-sm px-5 py-2.5 text-center text-black">
+            Update Product
+        </button>
+    </form>
+</div>
+
+<script>
+document.getElementById('imageFile').addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const preview = document.querySelector('#newImagePreview');
+        preview.src = URL.createObjectURL(file);
+        preview.classList.remove('hidden');
+    }
+});
+</script>
+
+<!-- <script src="/javascripts/script.js"></script> -->
+</body>
+</html>

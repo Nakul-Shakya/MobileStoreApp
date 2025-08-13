@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Products</title>
+    <!-- <link rel="stylesheet" href="/stylesheets/style.css" /> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+<body class="bg-zinc-900 text-white">
+  <div class="w-full min-h-screen p-10">
+    <a class="text-blue-500 hover:underline mr-4" href="/create">Back to create</a>
+    <a class="text-blue-500 hover:underline" href="/">Back to Home</a>
+
+    <h1 class="text-3xl mt-10 tracking-tighter mb-6">All Products</h1>
+
+      <div class="products flex gap-6 flex-wrap">
+        <% if(products.length > 0){ %> <% products.forEach((product) => { %>
+        <div
+          class="product w-72 bg-zinc-800 rounded-lg shadow-lg overflow-hidden"
+        >
+          <!-- Image -->
+          <img
+            class="w-full h-auto object-contain"
+            src="/images/<%= product.image %>"
+            alt="<%= product.name %>"
+          />
+
+          <!-- Details -->
+          <div class="p-4">
+            <h3 class="text-xl font-semibold"><%= product.name %></h3>
+            <p class="text-gray-300 text-sm mt-1">
+              Brand: <%= product.brand %>
+            </p>
+            <p class="text-gray-400 text-sm mt-1"><%= product.description %></p>
+            <p class="text-lg font-bold mt-3 text-green-400">
+              ₹<%= product.price %>
+            </p>
+
+            <div class="flex gap-3 mt-5 justify-between">
+              <a
+                class="text-blue-400 hover:underline"
+                href="/edit/<%= product._id %>"
+                >Edit</a
+              >
+              <a
+                class="text-red-500 hover:underline"
+                href="/delete/<%= product._id %>"
+                >Delete</a
+              >
+            </div>
+          </div>
+        </div>
+        <% }) %> <% } else { %>
+        <h1 class="text-zinc-500">No products yet</h1>
+        <% } %>
+      </div>
+    </div>
+
+    <script src="/javascripts/script.js"></script>
+  </body>
+</html>

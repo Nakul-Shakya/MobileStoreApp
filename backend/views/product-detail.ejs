@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Samsung S24 Ultra - My Mobile Store</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <style>
+      .product-detail {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
+        background: #fff;
+        border-radius: 8px;
+        max-width: 1200px;
+        margin: 20px auto;
+      }
+      .product-detail img {
+        max-width: 400px;
+        width: 100%;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+      .product-info {
+        flex: 1;
+        min-width: 300px;
+      }
+      .product-info h1 {
+        margin-bottom: 10px;
+      }
+      .product-info p {
+        margin: 8px 0;
+        line-height: 1.6;
+      }
+      .product-price {
+        font-size: 1.5em;
+        color: #ff4c4c;
+        margin: 10px 0;
+      }
+      .product-actions {
+        margin-top: 15px;
+      }
+      .product-actions a {
+        display: inline-block;
+        margin: 5px;
+        padding: 10px 15px;
+        background: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 6px;
+        transition: 0.3s;
+      }
+      .product-actions a:hover {
+        background: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+      <div class="container">
+        <div class="logo">
+          <img src=images/logo.png alt="Mobile Store Logo">
+          <span>My Mobile Store</span>
+        </div>
+
+      <nav class="navbar">
+        <ul>
+          <li><a href="/" class="active">Home</a></li>
+          <li><a href="brands">Brands</a></li>
+          <li><a href="product-detail">product-detail</a></li>
+          <li><a href="about">About</a></li>
+          <li><a href="contact">Contact</a></li>
+        </ul>
+      </nav>
+      </div>
+    </header>
+
+    <!-- ===== PRODUCT DETAIL ===== -->
+    <section class="product-detail">
+      <img src="samsung-s24-ultra.jpg" alt="Samsung S24 Ultra" />
+      <div class="product-info">
+        <h1>Samsung S24 Ultra</h1>
+        <p class="product-price">₹1,20,000</p>
+        <p><strong>Specifications:</strong></p>
+        <ul>
+          <li>6.9-inch QHD+ Dynamic AMOLED 2X Display</li>
+          <li>Snapdragon 8 Gen 3 Processor</li>
+          <li>12GB RAM, 256GB Storage</li>
+          <li>200MP + 12MP + 10MP + 10MP Quad Rear Cameras</li>
+          <li>40MP Front Camera</li>
+          <li>5000mAh Battery with 45W Fast Charging</li>
+          <li>5G, Dual SIM, Android 14</li>
+        </ul>
+        <div class="product-actions">
+          <a
+            href="https://wa.me/911234567890?text=I%20want%20to%20buy%20Samsung%20S24%20Ultra"
+            target="_blank"
+            >WhatsApp</a
+          >
+          <a href="tel:+911234567890">Call</a>
+          <a
+            href="https://maps.google.com/?q=Your+Store+Location"
+            target="_blank"
+            >Location</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <p>&copy; 2025 My Mobile Store | All Rights Reserved</p>
+    </footer>
+
+    <!-- ===== WHATSAPP FLOAT BUTTON ===== -->
+    <a href="https://wa.me/911234567890" class="whatsapp-float" target="_blank">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1022px-WhatsApp.svg.png"
+        alt="WhatsApp"
+      />
+    </a>
+  </body>
+</html>

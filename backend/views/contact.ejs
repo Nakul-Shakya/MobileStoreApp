@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - My Mobile Store</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">  
+  <style>
+    .contact-section {
+      background: linear-gradient(135deg, #e1f5fe, #ffffff);
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .contact-section h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      color: #ff4081;
+    }
+    .contact-section p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 1.1em;
+      color: #333;
+    }
+    .contact-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+    .contact-box {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      width: 300px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .contact-box h3 {
+      color: #007bff;
+      margin-bottom: 10px;
+    }
+    .contact-box p {
+      color: #444;
+    }
+    .contact-form {
+      max-width: 500px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1em;
+    }
+    .contact-form button {
+      background: #ff4081;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+    .map-section {
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <img src=images/logo.png alt="Mobile Store Logo">
+        <span>My Mobile Store</span>
+      </div>
+
+       <nav class="navbar">
+        <ul>
+          <li><a href="/" class="active">Home</a></li>
+          <li><a href="brands">Brands</a></li>
+          <li><a href="product-detail">product-detail</a></li>
+          <li><a href="about">About</a></li>
+          <li><a href="contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== CONTACT INFO ===== -->
+  <section class="contact-section">
+    <h1>Contact Us</h1>
+    <p>Got a question or want to buy your next dream phone? Reach out to us through the form below or visit us at our store!</p>
+
+    <div class="contact-grid">
+      <div class="contact-box">
+        <h3>Call Us</h3>
+        <p><a href="tel:+911234567890">+91 12345 67890</a></p>
+      </div>
+      <div class="contact-box">
+        <h3>Email Us</h3>
+        <p><a href="mailto:info@mymobilestore.com">info@mymobilestore.com</a></p>
+      </div>
+      <div class="contact-box">
+        <h3>WhatsApp</h3>
+        <p><a href="https://wa.me/911234567890" target="_blank">Chat Now</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT FORM ===== -->
+  <section>
+    <form class="contact-form" action="mailto:info@mymobilestore.com" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="text" name="phone" placeholder="Your Phone">
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- ===== GOOGLE MAP ===== -->
+  <section class="map-section">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!..." 
+      width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy">
+    </iframe>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>&copy; 2025 My Mobile Store | All Rights Reserved</p>
+  </footer>
+
+  <!-- ===== WHATSAPP FLOAT BUTTON ===== -->
+  <a href="https://wa.me/911234567890" class="whatsapp-float" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1022px-WhatsApp.svg.png" alt="WhatsApp">
+  </a>
+
+</body>
+</html>

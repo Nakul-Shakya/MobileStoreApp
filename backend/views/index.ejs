@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Mobile Store</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+      <div class="container">
+        <div class="logo">
+          <img src="images/logo.png" alt="Mobile Store Logo" />
+          <span>My Mobile Store</span>
+        </div>
+
+        <nav class="navbar">
+          <ul>
+            <li><a href="/" class="active">Home</a></li>
+            <li><a href="brands">Brands</a></li>
+            <li><a href="product-detail">product-detail</a></li>
+            <li><a href="about">About</a></li>
+            <li><a href="contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="search-box">
+          <input type="text" id="searchBox" placeholder="Search phones..." />
+        </div>
+      </div>
+    </header>
+
+    <!-- ===== BANNER SLIDER ===== -->
+    <section class="banner">
+      <div class="slider">
+        <div class="slides">
+          <img src="banner1.jpg" alt="Banner 1" />
+          <img src="banner2.jpg" alt="Banner 2" />
+          <img src="banner3.jpg" alt="Banner 3" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BRANDS ===== -->
+
+    <section class="brands">
+      <h2>Our Brands</h2>
+      <div class="brand-grid">
+        <% brands.forEach(brand => { %>
+        <a href="/brand/<%= brand.name %>" class="brand-box">
+          <img
+            src="<%= brand.image %>"
+            alt="<%= brand.name %>"
+            onerror="this.src='/images/default-logo.png'"
+          />
+          <p><%= brand.name %></p>
+        </a>
+        <% }) %>
+      </div>
+    </section>
+
+    <!-- ===== FEATURED PRODUCTS ===== -->
+    <section class="featured">
+      <h2>Featured Phones</h2>
+      <div class="product-grid" id="productGrid">
+        <div class="product" data-name="Samsung S24 Ultra">
+          <img src="phone1.jpg" alt="Samsung S24 Ultra" />
+          <h3>Samsung S24 Ultra</h3>
+          <p>₹1,20,000</p>
+        </div>
+        <div class="product" data-name="iPhone 15 Pro">
+          <img src="phone2.jpg" alt="iPhone 15 Pro" />
+          <h3>iPhone 15 Pro</h3>
+          <p>₹1,35,000</p>
+        </div>
+        <div class="product" data-name="Vivo X100">
+          <img src="phone3.jpg" alt="Vivo X100" />
+          <h3>Vivo X100</h3>
+          <p>₹65,000</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== GOOGLE MAP ===== -->
+    <section class="map">
+      <h2>Visit Our Store</h2>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3582.8320863105255!2d89.99936227607509!3d26.104399394358378!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375875001fddd855%3A0xa2e0adcc38dd94a4!2sRezzak%20Mobile%20store!5e0!3m2!1sen!2sin!4v1754943544055!5m2!1sen!2sin"
+        width="100%"
+        height="300"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+      ></iframe>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <p>&copy; 2025 My Mobile Store | All Rights Reserved</p>
+    </footer>
+
+    <!-- ===== FLOATING WHATSAPP BUTTON ===== -->
+    <a href="https://wa.me/911234567890" class="whatsapp-float" target="_blank">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1022px-WhatsApp.svg.png"
+        alt="WhatsApp"
+      />
+    </a>
+<script>
+  document.getElementById("searchBox").addEventListener("keyup", function() {
+    let filter = this.value.toLowerCase();
+    let products = document.querySelectorAll("#productGrid .product");
+
+    products.forEach(product => {
+        let name = product.getAttribute("data-name").toLowerCase();
+        if (name.includes(filter)) {
+            product.style.display = "block";
+        } else {
+            product.style.display = "none";
+        }
+    });
+});
+
+</script>
+    <!-- ===== JS FILE ===== -->
+    <script src="search.js"></script>
+  </body>
+</html>

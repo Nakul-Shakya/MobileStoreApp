@@ -1,0 +1,14 @@
+{
+  "name": "mobilestoreapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+   "build": "npm install --prefix backend && npm run build --prefix backend",
+    "start": "npm run start --prefix backend",
+    "start": "npm run dev --prefix backend"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
